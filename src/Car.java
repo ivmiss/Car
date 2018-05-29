@@ -11,18 +11,37 @@ public class Car {
     int consumption; //consumption per distance unite(km)
     int mileage = 0;
     
+    int maxPassengers;
+    int currentPassengers;
+    
     public Car() {
         this.model = "default";
         this.maxFuel = 100;
         this.consumption = 5;
+        this.maxPassengers = 2;
     }
     
     public Car(String customModel, int customMaxFuel, int customConsumption) {
         this.model = customModel;
         this.maxFuel = customMaxFuel;
         this.consumption = customConsumption;
+        this.currentPassengers = 1;
+        this.maxPassengers = 5;
     }
    
+//    public Car(int customMaxPass, int customCurrNoPass){
+//        this.maxPassengers = customMaxPass;
+//        this.currentPassengers = customCurrNoPass;
+//    }
+    public Car(String customModel, int customMaxFuel, int customConsumption, 
+            int customMaxPass, 
+            int customCurrNoPass) 
+    {
+        this(customModel, customMaxFuel, customConsumption);
+        this.maxPassengers = customMaxPass;
+        this.currentPassengers = customCurrNoPass;
+    }
+    
     public void printAtributes() {
          System.out.println("Model: " + this.model);
          System.out.println("Kapacitet rezervoara: " + this.maxFuel);
@@ -32,6 +51,7 @@ public class Car {
          System.out.println("Težina: " + this.weight);
          System.out.println("Ukupna pređena distanca je: " + this.mileage);
          System.out.println();
+         
     }
             
     public void changeLicense(String customLicense) {
@@ -63,4 +83,41 @@ public class Car {
         System.out.println("Nema dovoljno goriva za nastavak putovanja.");
     }
     }
+    
+    public void getIn(){ 
+//        Da li ima mesta?
+//        Ako ima
+//               dodaj putnika i ispisi poruku
+//        ako nema
+//                ispisi poruku da nema mesta
+        if(this.currentPassengers < this.maxPassengers){
+            this.currentPassengers = this.currentPassengers + 1;
+//            this.currentPassengers++;
+        } else{
+            System.out.println("There are no more free passengers's seads.");
+        }
+        
+        this.printPassengersInfo();
+    }
+    
+    public void getOut(){
+//        Da li ima vise od jednog putnika?
+//        Ako ima
+//                oduzmi putnika
+//        ako nema
+//                ispisi da je nemoguce izvrsiti zahtev
+        if(this.currentPassengers > 0){
+            this.currentPassengers = this.currentPassengers - 1;
+        } else{
+            System.out.println("There are no more passengers.");
+        }
+        this.printPassengersInfo();
+        
+    }
+    
+   public void printPassengersInfo(){
+       System.out.println("Trenutni broj putnika je: " + this.currentPassengers + " od maksimalnih: " + this.maxPassengers);
+   }
+
+   
 }
