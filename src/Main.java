@@ -27,23 +27,32 @@ public class Main {
          audi.printAtributes();
         
          Car noviAuto = new Car("noviAuto", 40, 3, 5, 1);
-         noviAuto.printAtributes();
+//         noviAuto.printAtributes();
+//         noviAuto.printPassengersInfo();
+//         noviAuto.getIn();
+//         noviAuto.getIn();
+//         noviAuto.getIn();
+//         noviAuto.getIn();
+//         noviAuto.getIn();
+//         noviAuto.getIn();
+//         noviAuto.printPassengersInfo();
+//         noviAuto.getOut();
+//         noviAuto.printPassengersInfo();
+//         noviAuto.getOut();
+//         noviAuto.getOut();
+//         noviAuto.getOut();
+//         noviAuto.getOut();
+//         noviAuto.getOut();
+//         noviAuto.getOut();
+//         
          noviAuto.printPassengersInfo();
-         noviAuto.getIn();
-         noviAuto.getIn();
-         noviAuto.getIn();
-         noviAuto.getIn();
-         noviAuto.getIn();
-         noviAuto.getIn();
-         noviAuto.printPassengersInfo();
-         noviAuto.getOut();
-         noviAuto.printPassengersInfo();
-         noviAuto.getOut();
-         noviAuto.getOut();
-         noviAuto.getOut();
-         noviAuto.getOut();
-         noviAuto.getOut();
-         noviAuto.getOut();
+
+         noviAuto.getIn(2);
+//         noviAuto.getIn(2);
+         
+         
+         noviAuto.getOut(1);
+         noviAuto.getOut(3);
     }
     
     }
