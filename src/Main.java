@@ -80,9 +80,10 @@ public class Main {
 //              loop1.testForLoop();
             
 //                Loops.testWhileLoop();
-//                Loops.testForLoop();
-                Loops.testDoubleForLoop();
-            
+////              Loops.testForLoop();
+//                Loops.testDoubleForLoop();
+//                Loops.printMultiplicationTable();
+                  Loops.printCoordinates();
     }
     
     }
