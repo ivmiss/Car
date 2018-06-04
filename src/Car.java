@@ -44,12 +44,12 @@ public class Car {
     
     public void printAtributes() {
          System.out.println("Model: " + this.model);
-         System.out.println("Kapacitet rezervoara: " + this.maxFuel);
-         System.out.println("Potrošnja: " + this.consumption);
-         System.out.println("Registracija: " + this.license);
-         System.out.println("Trenutno stanje rezervoara: " + this.currentFuel);
-         System.out.println("Težina: " + this.weight);
-         System.out.println("Ukupna pređena distanca je: " + this.mileage);
+         System.out.println("Fuel capacity: " + this.maxFuel);
+         System.out.println("Consumption: " + this.consumption);
+         System.out.println("License: " + this.license);
+         System.out.println("Current fuel status: " + this.currentFuel);
+         System.out.println("Weight: " + this.weight);
+         System.out.println("Traveled distance: " + this.mileage);
          System.out.println();
          
     }
@@ -80,7 +80,7 @@ public class Car {
         this.mileage = this.mileage + distance;
         this.currentFuel = this.currentFuel - distance * this.consumption;
     } else {
-        System.out.println("Nema dovoljno goriva za nastavak putovanja.");
+        System.out.println("No fuel left.\n");
     }
     }
     
@@ -94,7 +94,7 @@ public class Car {
             this.currentPassengers = this.currentPassengers + 1;
 //            this.currentPassengers++;
         } else{
-            System.out.println("There are no more free passengers's seads.");
+            System.out.println("There are no more free passengers's seads.\n");
         }
         
         this.printPassengersInfo();
@@ -109,13 +109,14 @@ public class Car {
         if(this.currentPassengers > 0){
             this.currentPassengers = this.currentPassengers - 1;
         } else{
-            System.out.println("There are no more passengers.");
+            System.out.println("There are no more passengers.\n");
         }
         this.printPassengersInfo();
         
     }
     
    public void printPassengersInfo(){
+<<<<<<< HEAD
        System.out.println("Current number : " + this.currentPassengers + " of maximum: " + this.maxPassengers);
    }
 
@@ -139,3 +140,29 @@ public class Car {
         this.printPassengersInfo();
    }
 }
+=======
+       System.out.println("Current number of passengers: " + this.currentPassengers + " from maximum: " + this.maxPassengers);
+   }
+
+   public void getIn(int numberOfPass){
+       if(this.maxPassengers >= this.currentPassengers + numberOfPass){
+           this.currentPassengers = this.currentPassengers + numberOfPass;
+           System.out.println(numberOfPass + " got in. Current number of passengers: " + this.currentPassengers);
+       } else {
+           System.out.println("There are no seeds for: " + numberOfPass +"passengers.\n" );
+       }
+   }
+   
+   public void getOut(int numberOfPass){
+       if(this.currentPassengers >= numberOfPass) {
+         this.currentPassengers = this.currentPassengers - numberOfPass;  
+         System.out.println(numberOfPass + " got out. Current number of passengers: " + this.currentPassengers);
+       }else {
+           System.out.println("There are no " + numberOfPass + " passengers in the car.\n");
+       }
+      
+   }
+       
+   }
+
+>>>>>>> 79e15b2f0e4e1003f6a34be96c1d108054cf7d45
