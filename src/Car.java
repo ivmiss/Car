@@ -116,8 +116,26 @@ public class Car {
     }
     
    public void printPassengersInfo(){
-       System.out.println("Trenutni broj putnika je: " + this.currentPassengers + " od maksimalnih: " + this.maxPassengers);
+       System.out.println("Current number : " + this.currentPassengers + " of maximum: " + this.maxPassengers);
    }
 
+   public void getIn(int numberOfPassengers){
+       if(this.currentPassengers + numberOfPassengers <= this.maxPassengers){
+            this.currentPassengers = this.currentPassengers + numberOfPassengers;
+//            this.currentPassengers++;
+            System.out.println(numberOfPassengers + " got in. Current number: " + this.currentPassengers);
+        } else{
+            System.out.println("There are no more free passengers's seads.\n");
+        }
+   }
    
+   public void getOut(int numberOfPassengers){
+       if(this.currentPassengers >= numberOfPassengers){
+            this.currentPassengers = this.currentPassengers - numberOfPassengers;
+            System.out.println(numberOfPassengers + " got out. Current number: " + this.currentPassengers);
+        } else{
+            System.out.println("There are no space for " + numberOfPassengers + " passengers.\n");
+        }
+        this.printPassengersInfo();
+   }
 }
